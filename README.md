@@ -10,6 +10,10 @@ TODO Web Application with AUTH by Go.
 ```sh
 make build-local
 make up
+
+# health check
+$ curl localhost:18000/health
+{"status": "ok"}%
 ```
 
 # Help
