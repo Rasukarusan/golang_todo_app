@@ -1,4 +1,4 @@
-FROM golang:1.18.2-bullseya as deploy-builder
+FROM golang:1.18.2-bullseye as deploy-builder
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ RUN go build -trimpath -ldflags "-w -s" -o app
 # ------------------------------------------------------------
 
 # デプロイ用コンテナ
-FROM debian:bullseya-slim as deploy
+FROM debian:bullseye-slim as deploy
 
 RUN apt-get update
 
