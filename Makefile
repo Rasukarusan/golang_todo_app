@@ -14,8 +14,8 @@ exec: ## Do docker exec
 up: ## Do docker compose up with hot realod
 	docker compose up -d
 
-down: ## Do docker compose logs
-	docker compose logs -f
+down: ## Do docker compose down
+	docker compose down
 
 logs: ## Do docker compose logs
 	docker compose logs -f
@@ -29,4 +29,3 @@ test: ## Execute tests
 help: ## Display this help screen
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 	 awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
-
