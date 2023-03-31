@@ -8,6 +8,9 @@ build: ## Build docker image to deploy
 build-local: ## Build docker image to local development
 	docker compose build --no-cache
 
+exec: ## Do docker exec
+	docker exec -it golang_todo_app-app-1 bash
+
 up: ## Do docker compose up with hot realod
 	docker compose up -d
 
@@ -26,3 +29,4 @@ test: ## Execute tests
 help: ## Display this help screen
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 	 awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+
