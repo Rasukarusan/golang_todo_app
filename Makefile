@@ -2,17 +2,19 @@
 .DEFAULT_GOAL := help
 DOCKER_TAG := latest
 build: ## Build docker image to deploy
-	docker build -t Rasukarusan/golang_todo_app:${DOCKER_TAG}
-	--target deploy ./
+	docker build -t golang_todo_app:${DOCKER_TAG} --target deploy ./
 
 build-local: ## Build docker image to local development
 	docker compose build --no-cache
 
+exec: ## Do docker exec
+	docker exec -it golang_todo_app-app-1 bash
+
 up: ## Do docker compose up with hot realod
 	docker compose up -d
 
-down: ## Do docker compose logs
-	docker compose logs -f
+down: ## Do docker compose down
+	docker compose down
 
 logs: ## Do docker compose logs
 	docker compose logs -f
