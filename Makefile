@@ -2,8 +2,7 @@
 .DEFAULT_GOAL := help
 DOCKER_TAG := latest
 build: ## Build docker image to deploy
-	docker build -t Rasukarusan/golang_todo_app:${DOCKER_TAG}
-	--target deploy ./
+	docker build -t golang_todo_app:${DOCKER_TAG} --target deploy ./
 
 build-local: ## Build docker image to local development
 	docker compose build --no-cache
